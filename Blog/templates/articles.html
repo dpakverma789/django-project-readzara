@@ -1,0 +1,119 @@
+{% extends "base.html"%}
+{% load static %}
+
+{% block title %}
+	<title>Our Articles</title>
+{% endblock %}
+
+{% block content%}
+
+	<!-- search area -->
+<!--	<div class="search-area">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-12">-->
+<!--					<span class="close-btn"><i class="fas fa-window-close"></i></span>-->
+<!--					<div class="search-bar">-->
+<!--						<div class="search-bar-tablecell">-->
+<!--							<h3>Search For:</h3>-->
+<!--							<input type="text" placeholder="Keywords">-->
+<!--							<button type="submit">Search <i class="fas fa-search"></i></button>-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end search arewa -->
+
+	<!-- breadcrumb-section -->
+	<div class="breadcrumb-section breadcrumb-bg">
+		<div class="container">
+			<div class="row">
+				<div class="col-lg-8 offset-lg-2 text-center">
+					<div class="breadcrumb-text">
+						<p>Explore the Knowledge</p>
+						<h1>Our Articles</h1>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end breadcrumb section -->
+
+	<!-- articles -->
+	<div class="latest-news mt-150 mb-150">
+		<div class="container">
+			<div class="row">
+				{% for data in post %}
+					<div class="col-lg-4 col-md-6">
+						<div class="single-latest-news">
+							<a href="{% url 'blog-post' %}{{data.id}}">
+								<img src="{{data.post_image.url}}" class="latest-news-bg news-bg-1"/>
+							</a>
+							<div class="news-text-box">
+								<p class="blog-meta">
+								<span class="author font-weight-bold"><i class="fas fa-user"></i>{{data.post_author}}</span>
+								<span class="date font-weight-bold"><i class="fas fa-calendar"></i>{{data.post_date}}</span>
+							</p>
+								<a href="{% url 'blog-post' %}{{data.id}}">
+									<h5>{{data.post_title}}</h5>
+								</a>
+								<p class="excerpt">{{data.post_content|slice:":80"}}</p>
+								<a href="{% url 'blog-post' %}{{data.id}}" class="read-more-btn">
+									read more
+									<i class="fas fa-angle-right"></i></a>
+								</div>
+						</div>
+					</div>
+				{% endfor %}
+			</div>
+			<div class="row">
+				<div class="container">
+					<div class="row">
+						<div class="col-lg-12 text-center">
+							<div class="pagination-wrap">
+								<ul>
+									<li><a href="#">Prev</a></li>
+									<li><a href="#">1</a></li>
+									<li><a class="active" href="#">2</a></li>
+									<li><a href="#">3</a></li>
+									<li><a href="#">Next</a></li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<!-- end latest news -->
+
+	<!-- logo carousel -->
+<!--	<div class="logo-carousel-section">-->
+<!--		<div class="container">-->
+<!--			<div class="row">-->
+<!--				<div class="col-lg-12">-->
+<!--					<div class="logo-carousel-inner">-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static '/img/company-logos/1.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static '/img/company-logos/2.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static '/img/company-logos/3.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static '/img/company-logos/4.png' %}" alt="">-->
+<!--						</div>-->
+<!--						<div class="single-logo-item">-->
+<!--							<img src="{% static '/img/company-logos/5.png' %}" alt="">-->
+<!--						</div>-->
+<!--					</div>-->
+<!--				</div>-->
+<!--			</div>-->
+<!--		</div>-->
+<!--	</div>-->
+	<!-- end logo carousel -->
+{% endblock %}
