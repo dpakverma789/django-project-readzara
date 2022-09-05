@@ -16,8 +16,6 @@ try:
     import django_heroku
 except ModuleNotFoundError:
     import django_on_heroku
-else:
-    found_heroku = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -32,7 +30,7 @@ SECRET_KEY = 'django-insecure-c_2_=*0nblqrp^x03s78tqyy(qm(lzfrt80mg4q6j1mo)h3uoz
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1', 'readzara.herokuapp.com']
+ALLOWED_HOSTS = ['readzara.herokuapp.com', 'localhost']
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
