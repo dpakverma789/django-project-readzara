@@ -19,8 +19,9 @@ def articles(request, string=None):
 def blog_post(request, pk=None):
     post = Post.objects.get(id=pk)
     post_suggestion = list(Post.objects.filter(~Q(id=post.pk))[:6])
-    post_authors = Post.objects.all().distinct('post_author')
+    post_authors = list(Post.objects.all().distinct('post_author')[:6])
     random.shuffle(post_suggestion)
+    random.shuffle(post_authors)
     if post:
         data = {
             'post_image': post.post_image,
