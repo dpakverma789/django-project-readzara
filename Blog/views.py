@@ -13,7 +13,7 @@ def articles(request, string=None):
         post = Post.objects.filter(post_author=string).order_by('-post_date')
     else:
         post = Post.objects.all().order_by('-post_date')
-    return render(request, 'articles.html', {'post': post})
+    return render(request, 'articles.html', {'post': post, 'author': string})
 
 
 def blog_post(request, pk=None):

@@ -33,7 +33,11 @@
 				<div class="col-lg-8 offset-lg-2 text-center">
 					<div class="breadcrumb-text">
 						<p>Explore the Knowledge</p>
-						<h1>Our Articles</h1>
+						{% if author %}
+							<h1>Posts By {{ author }}</h1>
+						{% else %}
+							<h1>Our Articles</h1>
+						{% endif %}
 					</div>
 				</div>
 			</div>
