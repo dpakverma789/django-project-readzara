@@ -12,8 +12,12 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
-import django_heroku
-import platform
+try:
+    import django_heroku
+except ModuleNotFoundError:
+    import django_on_heroku
+else:
+    found_heroku = True
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -143,4 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Activate Django-Heroku.
-django_heroku.settings(locals())
+if found_heroku:
+    django_heroku.settings(locals())
+else:
+    django_on_heroku.settings(locals())
