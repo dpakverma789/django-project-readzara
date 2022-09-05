@@ -147,7 +147,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Activate Django-Heroku.
-if found_heroku:
+try:
     django_heroku.settings(locals())
-else:
+except:
     django_on_heroku.settings(locals())
