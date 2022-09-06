@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 from pathlib import Path
 import os
+import platform
 try:
     import django_heroku
 except ModuleNotFoundError:
@@ -25,7 +26,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-c_2_=*0nblqrp^x03s78tqyy(qm(lzfrt80mg4q6j1mo)h3uoz'
+SECRET_KEY = os.environ.get('readzara_key')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -84,11 +85,10 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dcblv60jghh33q',
-        'USER': 'nmhthbrnwuqnek',
-        'PASSWORD': '24145a276891413247e58e9250036683e1dd7489536be30bfe4ef06a62b67370',
-        'HOST': 'ec2-54-204-241-136.compute-1.amazonaws.com',
-        'PORT': 5432
+        'NAME': 'djanGo',
+        'USER': 'postgres',
+        'PASSWORD': 'Dpakverma789@' if platform.system() == 'Windows' else 'root',
+        'HOST': 'localhost',
     }
 }
 
