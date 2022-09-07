@@ -1,4 +1,5 @@
 from django.shortcuts import render
+from django.core.paginator import Paginator
 from .models import Post
 from django.db.models import Q
 import random
@@ -13,7 +14,10 @@ def articles(request, string=None):
         post = Post.objects.filter(post_author=string).order_by('-post_date')
     else:
         post = Post.objects.all().order_by('-post_date')
-    return render(request, 'articles.html', {'post': post, 'author': string})
+    paginator = Paginator(post, 3)
+    page_number = request.GET.get('page')
+    page_obj = paginator.get_page(page_number)
+    return render(request, 'articles.html', {'post': page_obj, 'author': string})
 
 
 def blog_post(request, pk=None):
