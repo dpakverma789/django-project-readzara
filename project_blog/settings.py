@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('readzara_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.readzara.herokuapp.com','readzara.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['www.readzara.herokuapp.com', 'readzara.herokuapp.com', 'localhost']
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
@@ -150,13 +150,3 @@ try:
     django_heroku.settings(locals())
 except:
     django_on_heroku.settings(locals())
-
-# HTTPS SETTINGS
-SESSION_COOKIE_SECURE = True
-CSRF_COOKIE_SECURE = True
-SECURE_SSL_REDIRECT = True
-
-# HSTS SETTINGS
-SECURE_HSTS_SECONDS = 3153600
-SECURE_HSTS_PRELOAD = True
-SECURE_HSTS_INCLUDE_SUBDOMAINS = True
