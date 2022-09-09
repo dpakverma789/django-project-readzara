@@ -13,7 +13,7 @@ def articles(request, string=None):
     if string:
         post = Post.objects.filter(post_author=string).order_by('-post_date')
     else:
-        post = Post.objects.all().order_by('-post_date')
+        post = Post.objects.filter(is_post_approved=True).order_by('-post_date')
     paginator = Paginator(post, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
@@ -34,7 +34,8 @@ def blog_post(request, pk=None):
             'post_author': post.post_author,
             'post_date': post.post_date
         }
-        return render(request, 'post.html', {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors})
+        context = {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors}
+        return render(request, 'post.html', context)
 
 
 def about(request):
