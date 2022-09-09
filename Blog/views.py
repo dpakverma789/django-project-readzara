@@ -34,7 +34,8 @@ def blog_post(request, pk=None):
             'post_author': post.post_author,
             'post_date': post.post_date
         }
-        return render(request, 'post.html', {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors})
+        context = {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors}
+        return render(request, 'post.html', context)
 
 
 def about(request):
