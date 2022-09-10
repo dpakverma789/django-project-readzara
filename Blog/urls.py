@@ -8,4 +8,5 @@ urlpatterns = [
     path('articles/blog-post/', views.blog_post, name='blog-post'),
     path('articles/blog-post/<int:pk>', views.blog_post, name='blog-post'),
     path('about/', views.about, name='blog-about'),
+    path('write-for-us/', views.write_for_us, name='write-for-us'),
 ]

@@ -3,6 +3,7 @@ from django.core.paginator import Paginator
 from .models import Post
 from django.db.models import Q
 import random
+from datetime import datetime
 
 
 def home(request):
@@ -40,6 +41,21 @@ def blog_post(request, pk=None):
 
 def about(request):
     return render(request, 'about.html')
+
+
+def write_for_us(request):
+    if request.method == 'POST':
+        post = Post()
+        if not Post.objects.filter(post_title=request.POST.get('post_title')):
+            if request.FILES.get('post_image'):
+                post.post_image = request.FILES['post_image']
+            post.post_author = request.POST.get('post_author')
+            post.post_title = request.POST.get('post_title')
+            post.post_content = request.POST.get('post_content')
+            post.post_date = datetime.now()
+            post.save()
+            return render(request, 'thanks_for_submitting.html')
+    return render(request, 'write_for_us.html')
 
 
 def page_not_found_view(request, exception):
