@@ -23,8 +23,8 @@ def articles(request, string=None):
 
 def blog_post(request, pk=None):
     post = Post.objects.get(id=pk)
-    post_suggestion = list(Post.objects.filter(~Q(id=post.pk))[:6])
-    post_authors = list(Post.objects.all().distinct('post_author')[:6])
+    post_suggestion = list(Post.objects.filter(~Q(id=post.pk), Q(is_post_approved=True))[:6])
+    post_authors = list(Post.objects.filter(is_post_approved=True).distinct('post_author')[:6])
     random.shuffle(post_suggestion)
     random.shuffle(post_authors)
     if post:
