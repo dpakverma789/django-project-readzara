@@ -45,14 +45,14 @@
 								<input type="text" placeholder="Your Name"
 									   name="post_author" id="name" required="true">
 							</p>
-							<p><input type="file" name="post_image"></p>
+							<p><input type="file" id="post_image" name="post_image" onchange="return fileValidation()"></p>
 							<p>
-								<input type="text" placeholder="Post Title..."
+								<input type="text" placeholder="Your Post Title..."
 									   name="post_title" id="subject" required="true">
 							</p>
 							<p>
 								<textarea name="post_content" id="message" cols="30" rows="10"
-										  placeholder="Your Content..." required="true"></textarea>
+										  placeholder="Your Post Content Here..." required="true"></textarea>
 							</p>
 							<p><input type="submit" value="Post"></p>
 						</form>
