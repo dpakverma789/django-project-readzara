@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('readzara_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.readzara.herokuapp.com', 'readzara.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
