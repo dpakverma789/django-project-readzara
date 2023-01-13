@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('readzara_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.readzara.herokuapp.com', 'readzara.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
@@ -85,11 +85,11 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'dcblv60jghh33q',
-        'USER': 'nmhthbrnwuqnek',
-        'PASSWORD': '24145a276891413247e58e9250036683e1dd7489536be30bfe4ef06a62b67370',
-        'HOST': 'ec2-54-204-241-136.compute-1.amazonaws.com',
-        'PORT': 5432
+        'NAME': 'railway',
+        'USER': 'postgres',
+        'PASSWORD': 'IJcYj22itNU5NW4siSN3',
+        'HOST': 'containers-us-west-55.railway.app',
+        'PORT': 7792
     }
 }
 
