@@ -87,10 +87,10 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djanGo',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Dpakverma789@' if platform.system() == 'Windows' else 'root',
-        'HOST': 'localhost',
+        'PASSWORD': 'IJcYj22itNU5NW4siSN3',
+        'HOST': 'containers-us-west-55.railway.app',
     }
 }
 
