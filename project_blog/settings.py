@@ -13,10 +13,10 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import platform
-try:
-    import django_heroku
-except ModuleNotFoundError:
-    import django_on_heroku
+# try:
+#     import django_heroku
+# except ModuleNotFoundError:
+#     import django_on_heroku
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,7 +31,7 @@ SECRET_KEY = os.environ.get('readzara_key')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['www.readzara.herokuapp.com', 'readzara.herokuapp.com', 'localhost']
+ALLOWED_HOSTS = ['*']
 
 TEMPLATES_DIR = os.path.join(BASE_DIR, 'templates')
 
@@ -85,10 +85,11 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'djanGo',
+        'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'Dpakverma789@' if platform.system() == 'Windows' else 'root',
-        'HOST': 'localhost',
+        'PASSWORD': 'IJcYj22itNU5NW4siSN3',
+        'HOST': 'containers-us-west-55.railway.app',
+        'PORT': 7792
     }
 }
 
@@ -145,7 +146,7 @@ DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 STATICFILES_STORAGE = "whitenoise.storage.CompressedStaticFilesStorage"
 
 # Activate Django-Heroku.
-try:
-    django_heroku.settings(locals())
-except:
-    django_on_heroku.settings(locals())
+# try:
+#     django_heroku.settings(locals())
+# except:
+#     django_on_heroku.settings(locals())
