@@ -907,7 +907,7 @@ h2.widget-title:after {
   margin-bottom: 0;
 }
 
-.footer-box.subscribe form input[type=email] {
+.footer-box.subscribe form input[type=file] {
   border: none;
   background-color: #012738;
   width: 78%;
@@ -1808,7 +1808,7 @@ span.comment-date {
   color: #051922;
 }
 
-.comment-template form p input[type=email] {
+.comment-template form p input[type=file] {
   border: 1px solid #ddd;
   width: 49%;
   padding: 15px;
@@ -2263,8 +2263,9 @@ ul.social-link-team li a {
   line-height: 1.8;
 }
 
-.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=email] {
-  width: 49%;
+.contact-form form p input[type=text], .contact-form form p input[type=tel], .contact-form form p input[type=file] {
+  /*width: 49%;*/
+  width: 100%;
   padding: 15px;
   border: 1px solid #ddd;
   border-radius: 3px;
