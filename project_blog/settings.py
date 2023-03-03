@@ -82,9 +82,9 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'railway',
         'USER': 'postgres',
-        'PASSWORD': 'IJcYj22itNU5NW4siSN3',
-        'HOST': 'containers-us-west-55.railway.app',
-        'PORT': 7792
+        'PASSWORD': 'H9k4U5KshuiXV8FsqyBX',
+        'HOST': 'containers-us-west-94.railway.app',
+        'PORT': 6396
     }
 }
 
@@ -125,7 +125,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = 'static/'
-STATIC_ROOT = BASE_DIR/'staticfiles'/'static'
+STATIC_ROOT = BASE_DIR/'staticfiles_build'/'static'
 STATICFILES_DIRS = [BASE_DIR/'static']
 
 MEDIA_URL = '/media/'
