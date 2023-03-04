@@ -11,7 +11,7 @@ def home(request):
 
 
 def articles(request, string=None):
-    if string or '%20' in string:
+    if string and '%20' in string:
         string = string.replace('%20', ' ')
         post = Post.objects.filter(post_author=string).order_by('-post_date')
     else:
