@@ -11,9 +11,9 @@ def home(request):
 
 
 def articles(request, string=None):
-    if string and '%20' in string:
-        string = string.replace('%20', ' ')
-        post = Post.objects.filter(post_author=string).order_by('-post_date')
+    author = string.replace('%20', ' ') if string and '%20' in string else string
+    if author:
+        post = Post.objects.filter(post_author=author).order_by('-post_date')
     else:
         post = Post.objects.filter(is_post_approved=True).order_by('-post_date')
     paginator = Paginator(post, 3)
