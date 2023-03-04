@@ -19,7 +19,7 @@ def articles(request, string=None):
     paginator = Paginator(post, 3)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
-    return render(request, 'articles.html', {'post': page_obj, 'author': string})
+    return render(request, 'articles.html', {'post': page_obj, 'author': author})
 
 
 def blog_post(request, pk=None):
