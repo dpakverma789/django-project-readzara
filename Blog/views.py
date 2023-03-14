@@ -16,7 +16,7 @@ def articles(request, string=None):
         post = Post.objects.filter(post_author=author).order_by('-post_date')
     else:
         post = Post.objects.filter(is_post_approved=True).order_by('-post_date')
-    paginator = Paginator(post, 3)
+    paginator = Paginator(post, 6)
     page_number = request.GET.get('page')
     page_obj = paginator.get_page(page_number)
     return render(request, 'articles.html', {'post': page_obj, 'author': author})
