@@ -6,7 +6,7 @@ function fileValidation(){
     let fileName = fileInput.value;
     let extension = fileName.substring(fileName.lastIndexOf('.') + 1);
     if (!extension_set.includes(extension)){
-        alert("Only Images Allowed!");
+        alert("Required Image For your Post!");
         fileInput.value = '';
         return false;
     }
