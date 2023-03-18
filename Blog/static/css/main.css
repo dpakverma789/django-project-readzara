@@ -2175,16 +2175,16 @@ a.video-play-btn {
   border-bottom-left-radius: 5px;
 }
 
-.team-bg-1 {
-  background-image: url(../img/team/team-1.jpg);
+.team-amit {
+  background-image: url(../img/team/amit.jpg);
 }
 
-.team-bg-2 {
-  background-image: url(../img/team/team-2.jpg);
+.team-dpak {
+  background-image: url(../img/team/dpak.jpg);
 }
 
-.team-bg-3 {
-  background-image: url(../img/team/team-3.jpg);
+.team-kartikey {
+  background-image: url(../img/team/kartikey.jpg);
 }
 
 .team-bg-4 {
@@ -2192,7 +2192,8 @@ a.video-play-btn {
 }
 
 .team-bg {
-  height: 400px;
+  height: 300px;
+  width: 240px;
   background-size: cover;
   background-position: center;
   border-radius: 5px;
@@ -2254,7 +2255,7 @@ ul.social-link-team li a {
   margin-bottom: 25px;
 }
 
-.form-title h2 {
+.form-title h2 {team-bg
   font-size: 25px;
 }
 
