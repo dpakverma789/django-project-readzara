@@ -28,6 +28,7 @@ def blog_post(request, pk=None):
     post.save()
     post_suggestion = list(Post.objects.filter(~Q(id=post.pk), Q(is_post_approved=True))[:6])
     post_authors = list(Post.objects.filter(is_post_approved=True).distinct('post_author')[:6])
+    most_viewed_post = list(Post.objects.filter(is_post_approved=True).order_by('-post_clicks')[:3])
     random.shuffle(post_suggestion)
     random.shuffle(post_authors)
     if post:
@@ -39,7 +40,12 @@ def blog_post(request, pk=None):
             'post_date': post.post_date,
             'post_clicks': post.post_clicks
         }
-        context = {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors}
+        context = {
+            'data': data,
+            'post_suggestion': post_suggestion,
+            'post_authors': post_authors,
+            'most_viewed_post': most_viewed_post
+        }
         return render(request, 'post.html', context)
 
 

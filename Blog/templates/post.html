@@ -221,6 +221,14 @@
 								{% endfor %}
 							</ul>
 						</div>
+						<div class="archive-posts">
+							<h4>Top Read Posts</h4>
+							<ul>
+								{% for post in most_viewed_post %}
+									<li><a href="{% url 'blog-post' %}{{post.id}}">{{ post }}</a></li>
+								{% endfor %}
+							</ul>
+						</div>
 <!--						<div class="tag-section">-->
 <!--							<h4>Tags</h4>-->
 <!--							<ul>-->
