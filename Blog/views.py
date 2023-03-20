@@ -24,6 +24,8 @@ def articles(request, string=None):
 
 def blog_post(request, pk=None):
     post = Post.objects.get(id=pk)
+    post.post_clicks += 1
+    post.save()
     post_suggestion = list(Post.objects.filter(~Q(id=post.pk), Q(is_post_approved=True))[:6])
     post_authors = list(Post.objects.filter(is_post_approved=True).distinct('post_author')[:6])
     random.shuffle(post_suggestion)
@@ -34,7 +36,8 @@ def blog_post(request, pk=None):
             'post_title': post.post_title,
             'post_content': post.post_content,
             'post_author': post.post_author,
-            'post_date': post.post_date
+            'post_date': post.post_date,
+            'post_clicks': post.post_clicks
         }
         context = {'data': data, 'post_suggestion': post_suggestion, 'post_authors': post_authors}
         return render(request, 'post.html', context)

@@ -8,6 +8,7 @@ class Post(models.Model):
     post_author = models.CharField(max_length=20)
     post_date = models.DateField()
     is_post_approved = models.BooleanField(default=False)
+    post_clicks = models.IntegerField(default=0)
 
     def __str__(self):
         info = f'{self.post_title} --- by {self.post_author}'
