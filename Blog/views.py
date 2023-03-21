@@ -59,6 +59,8 @@ def write_for_us(request):
         if not Post.objects.filter(post_title=request.POST.get('post_title')):
             if request.FILES.get('post_image'):
                 post.post_image = request.FILES['post_image']
+            else:
+                post.post_image = 'images/no_image_available.png'
             post.post_author = request.POST.get('post_author')
             post.post_title = request.POST.get('post_title')
             post.post_content = request.POST.get('post_content')
