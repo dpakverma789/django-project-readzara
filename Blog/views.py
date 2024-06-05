@@ -4,6 +4,7 @@ from .models import Post
 from django.db.models import Q
 import random
 from datetime import datetime
+from django.core.files.storage import FileSystemStorage
 
 
 def home(request):
@@ -58,7 +59,11 @@ def write_for_us(request):
         post = Post()
         if not Post.objects.filter(post_title=request.POST.get('post_title')):
             if request.FILES.get('post_image'):
-                post.post_image = request.FILES['post_image']
+                image = request.FILES['post_image']
+                FS = FileSystemStorage()
+                file_name = f"images/{image.name}"
+                FS.save(file_name, image)
+                post.post_image = file_name
             else:
                 post.post_image = 'images/no_image_available.png'
             post.post_author = request.POST.get('post_author')
