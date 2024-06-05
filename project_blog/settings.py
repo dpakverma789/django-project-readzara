@@ -82,7 +82,7 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'Read_Zara',
         'USER': 'postgres',
-        'PASSWORD': 'Dpakverma789@' if platform.system() == 'Windows' else 'root',
+        'PASSWORD': 'Dpak789@' if platform.system() == 'Windows' else 'root',
         'HOST': 'localhost',
     }
 }
