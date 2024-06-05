@@ -80,11 +80,10 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'railway',
-        'USER': 'postgres',
-        'PASSWORD': 'H9k4U5KshuiXV8FsqyBX',
-        'HOST': 'containers-us-west-94.railway.app',
-        'PORT': 6396
+        'NAME': 'hflfugkk',
+        'USER': 'hflfugkk',
+        'PASSWORD': 'rriQnKr3AxaAr0PdZ247PlpFXSXyMxo-',
+        'HOST': 'cornelius.db.elephantsql.com'
     }
 }
 
