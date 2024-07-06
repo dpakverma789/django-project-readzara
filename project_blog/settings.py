@@ -80,9 +80,9 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'Read_Zara',
+        'NAME': 'read_zara',
         'USER': 'postgres',
-        'PASSWORD': 'Dpak789@' if platform.system() == 'Windows' else 'root',
+        'PASSWORD': 'postgres' if platform.system() == 'Windows' else 'root',
         'HOST': 'localhost',
     }
 }
