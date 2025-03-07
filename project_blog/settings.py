@@ -13,7 +13,8 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 from pathlib import Path
 import os
 import platform
-
+from dotenv import load_dotenv
+load_dotenv()
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -80,10 +81,10 @@ WSGI_APPLICATION = 'project_blog.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql',
-        'NAME': 'hflfugkk',
-        'USER': 'hflfugkk',
-        'PASSWORD': 'rriQnKr3AxaAr0PdZ247PlpFXSXyMxo-',
-        'HOST': 'cornelius.db.elephantsql.com'
+        'NAME': 'django_readzara',
+        'USER': 'django_readzara_owner',
+        'PASSWORD': 'npg_pJ1BO3rMEoNG',
+        'HOST': 'ep-sparkling-snow-a5qt8oz1-pooler.us-east-2.aws.neon.tech'
     }
 }
 
