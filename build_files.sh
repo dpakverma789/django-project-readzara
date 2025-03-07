@@ -1,5 +1,9 @@
+#!/bin/bash
+python -m ensurepip --default-pip
+#pip install --upgrade pip
 echo "======> INSTALLING REQUIREMENTS <======"
-pip install -r requirements.txt
+#pip install -r requirements.txt
+python -m pip install -r requirements.txt
 echo "======> REQUIREMENTS INSTALLED <======"
 
 echo "======> COLLECTING STATIC FILES <======"
