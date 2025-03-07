@@ -2,3 +2,4 @@
 Blog/migrations/__pycache__/
 project_blog/__pycache__/
 .env
+.idea
